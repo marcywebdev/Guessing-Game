@@ -30,7 +30,7 @@
   user-select: none;
   position: relative;
   float: left;
-  width: calc((100% / 8) - 10px);
+  width: calc((100% / 12) - 10px);
   margin: 5px;
   transform-style: preserve-3d;
   transform-origin: center center 100px;
