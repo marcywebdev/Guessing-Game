@@ -20,15 +20,23 @@
   max-width: 1600px;
   margin: 0 auto;
   background: #fff;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-perspective: 1200px;
   perspective: 1200px;
+  -webkit-perspective-origin: center;
   perspective-origin: center;
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 5px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   vertical-align: middle;
 }
@@ -37,30 +45,43 @@
   margin: 5px;
   height: auto;
   width: 75%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .card {
   pointer-events: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   position: relative;
   float: left;
   width: calc((100% / 12) - 10px);
   margin: 5px;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform-origin: center center 100px;
+  -ms-transform-origin: center center 100px;
   transform-origin: center center 100px;
+  -webkit-animation-direction: normal;
   animation-direction: normal;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
 
 .card.out {
+  -webkit-animation-name: flipcardtoback;
   animation-name: flipcardtoback;
   background: rgba(255, 0, 0, 0.1);
 }
 
 .card.in {
+  -webkit-animation-name: flipcardtofront;
   animation-name: flipcardtofront;
 }
 
@@ -68,6 +89,7 @@
   display: block;
   max-width: 100%;
   opacity: 0.5;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -77,42 +99,96 @@
   left: 0;
   max-width: 100%;
   opacity: 0.5;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-@keyframes flipcardtoback {
+@-webkit-keyframes flipcardtoback {
   0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
     transform: rotateY(0deg) translateZ(0px);
   }
 
   25% {
+    -webkit-transform: rotateY(0deg) translateZ(100px);
     transform: rotateY(0deg) translateZ(100px);
   }
 
   75% {
+    -webkit-transform: rotateY(180deg) translateZ(100px);
     transform: rotateY(180deg) translateZ(100px);
   }
 
   100% {
+    -webkit-transform: rotateY(180deg) translateZ(200px);
     transform: rotateY(180deg) translateZ(200px);
+  }
+}
+
+@keyframes flipcardtoback {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
+    transform: rotateY(0deg) translateZ(0px);
+  }
+
+  25% {
+    -webkit-transform: rotateY(0deg) translateZ(100px);
+    transform: rotateY(0deg) translateZ(100px);
+  }
+
+  75% {
+    -webkit-transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(100px);
+  }
+
+  100% {
+    -webkit-transform: rotateY(180deg) translateZ(200px);
+    transform: rotateY(180deg) translateZ(200px);
+  }
+}
+
+@-webkit-keyframes flipcardtofront {
+  0% {
+    -webkit-transform: rotateY(180deg) translateZ(200px);
+    transform: rotateY(180deg) translateZ(200px);
+  }
+
+  25% {
+    -webkit-transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(100px);
+  }
+
+  75% {
+    -webkit-transform: rotateY(0deg) translateZ(100px);
+    transform: rotateY(0deg) translateZ(100px);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
+    transform: rotateY(0deg) translateZ(0px);
   }
 }
 
 @keyframes flipcardtofront {
   0% {
+    -webkit-transform: rotateY(180deg) translateZ(200px);
     transform: rotateY(180deg) translateZ(200px);
   }
 
   25% {
+    -webkit-transform: rotateY(180deg) translateZ(100px);
     transform: rotateY(180deg) translateZ(100px);
   }
 
   75% {
+    -webkit-transform: rotateY(0deg) translateZ(100px);
     transform: rotateY(0deg) translateZ(100px);
   }
 
   100% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
     transform: rotateY(0deg) translateZ(0px);
   }
 }
@@ -122,6 +198,7 @@
     margin: 5px;
     height: auto;
     width: 25%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 }
