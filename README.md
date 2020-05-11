@@ -1,2 +1,2 @@
 # Guessing-Game
-A guessing game where you play against the computer and figure out the character you choose by describing them. 
+A guessing game where you play against someone online via the desktop or phone.
